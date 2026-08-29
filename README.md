@@ -33,4 +33,4 @@ python -m http.server 8000
 
 이메일 신청 폼과 이야기 링크는 현재 데모용입니다.
 
-새 제품은 `products.json`의 `products` 배열에 `name`, `price`, `image`, `url` 네 항목만 추가하면 홈과 제품 페이지에 함께 반영됩니다.
+새 제품은 `products.json`의 `products` 배열에 `name`, `tagline`, `price`, `image`, `url`을 추가하면 홈과 제품 페이지에 함께 반영됩니다. `tagline`은 카드에 표시되는 짧은 상황 문구입니다.

@@ -250,7 +250,7 @@ p { max-width: 40ch; }
 .catalog-intro { display: grid; gap: 2rem; }
 .catalog-intro p { margin: 0; }
 .catalog-intro p:last-child { padding-top: 1rem; border-top: 1px solid rgba(28, 26, 23, .3); color: var(--accent); font-size: .72rem; font-weight: 750; letter-spacing: .08em; }
-.catalog-section, .featured-products { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad) var(--section-space); }
+.catalog-section, .curated-catalog, .featured-products { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad) var(--section-space); }
 .featured-products { padding-top: var(--section-space); }
 .featured-products-heading { display: flex; justify-content: space-between; align-items: end; gap: 3rem; margin-bottom: clamp(4rem, 8vh, 7rem); }
 .featured-products-heading h2 { margin: 0; font: 600 clamp(2.9rem, 5.4vw, 5.8rem)/1.16 var(--heading-font); letter-spacing: -.045em; }
@@ -262,11 +262,28 @@ p { max-width: 40ch; }
 .catalog-card-image:hover img, .catalog-card-image:focus-visible img { transform: scale(1.025); }
 .catalog-card-content { padding-top: 1.25rem; }
 .catalog-card h3 { min-height: 3.2em; margin: 0; font: 600 clamp(1rem, 1.25vw, 1.2rem)/1.55 var(--heading-font); letter-spacing: -.025em; }
+.catalog-card-tagline { min-height: 3em; margin: .7rem 0 0; color: rgba(28, 26, 23, .68); font-size: .82rem; line-height: 1.65; }
 .catalog-card-footer { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 1.3rem; padding-top: 1rem; border-top: 1px solid rgba(28, 26, 23, .26); }
 .catalog-card-footer p { margin: 0; font-size: .82rem; font-weight: 700; }
 .catalog-card-footer a { flex: 0 0 auto; padding: .65rem .9rem; background: var(--ink); color: var(--cream); font-size: .7rem; font-weight: 750; transition: background-color .2s ease; }
 .catalog-card-footer a:hover, .catalog-card-footer a:focus-visible { background: var(--accent); }
 .catalog-message { grid-column: 1 / -1; margin: 0; padding: 4rem 0; border-top: 1px solid rgba(28, 26, 23, .3); }
+.signature-product { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(20rem, .85fr); margin-bottom: var(--section-space); overflow: hidden; background: var(--ink); color: var(--cream); }
+.signature-product-media { display: block; overflow: hidden; background: var(--ink); }
+.signature-product-media img { width: 100%; height: 100%; aspect-ratio: 1 / 1; object-fit: cover; transition: transform .7s ease; }
+.signature-product-media:hover img, .signature-product-media:focus-visible img { transform: scale(1.02); }
+.signature-product-content { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: clamp(2.5rem, 5.5vw, 5.5rem); }
+.signature-product-content .section-label { color: var(--accent); }
+.signature-product-content h2 { max-width: 14em; margin: 1.5rem 0 0; font: 600 clamp(1.8rem, 3vw, 3rem)/1.35 var(--heading-font); letter-spacing: -.04em; }
+.signature-product-tagline { max-width: 25em; margin: 2rem 0 0; font-size: clamp(1rem, 1.3vw, 1.2rem); line-height: 1.75; }
+.signature-product-price { margin: 1.25rem 0 0; font-size: .86rem; font-weight: 700; }
+.signature-product-buy { display: inline-block; margin-top: 2rem; padding: .9rem 1.2rem; background: var(--accent); color: var(--cream); font-size: .75rem; font-weight: 750; transition: color .2s ease, background-color .2s ease; }
+.signature-product-buy:hover, .signature-product-buy:focus-visible { background: var(--cream); color: var(--ink); }
+.curated-grid-heading { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin-bottom: clamp(3rem, 7vh, 5.5rem); }
+.curated-grid-heading h2 { margin: 0; font: 600 clamp(2rem, 4vw, 3.8rem)/1.25 var(--heading-font); letter-spacing: -.04em; }
+.catalog-store-cta { display: flex; justify-content: center; margin-top: clamp(4rem, 8vh, 7rem); }
+.catalog-store-cta a { display: inline-block; padding: 1rem 1.35rem; border: 1px solid var(--ink); font-size: .78rem; font-weight: 750; transition: color .2s ease, background-color .2s ease; }
+.catalog-store-cta a:hover, .catalog-store-cta a:focus-visible { background: var(--ink); color: var(--cream); }
 
 @media (max-width: 900px) {
   :root { --section-space: max(15vh, 6.5rem); }
@@ -317,12 +334,16 @@ p { max-width: 40ch; }
   .catalog-hero h1 { font-size: clamp(3.2rem, 12vw, 5rem); }
   .catalog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .featured-products-heading { align-items: start; flex-direction: column; }
+  .signature-product { grid-template-columns: 1fr; }
+  .signature-product-media img { height: auto; }
 }
 
 @media (max-width: 640px) {
   .catalog-grid { grid-template-columns: 1fr; gap: 3rem; }
   .catalog-card h3 { min-height: 0; }
+  .catalog-card-tagline { min-height: 0; }
   .catalog-hero h1 { font-size: clamp(2.9rem, 12vw, 3.6rem); }
+  .curated-grid-heading { align-items: start; flex-direction: column; }
 }
 
 @media (max-width: 420px) {
