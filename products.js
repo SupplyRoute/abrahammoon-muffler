@@ -48,6 +48,18 @@ const createProductCard = (product) => {
   const price = document.createElement('p');
   price.textContent = formatPrice(product.price);
 
+  const actions = document.createElement('div');
+  actions.className = 'catalog-card-actions';
+
+  const cartButton = document.createElement('button');
+  cartButton.type = 'button';
+  cartButton.textContent = '담기';
+  cartButton.setAttribute('data-cart-add', '');
+  cartButton.dataset.name = product.name;
+  cartButton.dataset.price = String(product.price);
+  cartButton.dataset.url = product.url;
+  cartButton.setAttribute('aria-label', `${product.name} 장바구니에 담기`);
+
   const buyLink = document.createElement('a');
   buyLink.href = product.url;
   buyLink.target = '_blank';
@@ -55,7 +67,8 @@ const createProductCard = (product) => {
   buyLink.textContent = '구매하기';
   buyLink.setAttribute('aria-label', `${product.name} 구매하기 (새 탭)`);
 
-  footer.append(price, buyLink);
+  actions.append(cartButton, buyLink);
+  footer.append(price, actions);
   content.append(title, tagline, footer);
   article.append(imageLink, content);
   return article;
@@ -102,6 +115,19 @@ const createSignatureProduct = (product) => {
   price.className = 'signature-product-price';
   price.textContent = formatPrice(product.price);
 
+  const actions = document.createElement('div');
+  actions.className = 'signature-product-actions';
+
+  const cartButton = document.createElement('button');
+  cartButton.type = 'button';
+  cartButton.className = 'signature-product-cart';
+  cartButton.textContent = '장바구니 담기';
+  cartButton.setAttribute('data-cart-add', '');
+  cartButton.dataset.name = product.name;
+  cartButton.dataset.price = String(product.price);
+  cartButton.dataset.url = product.url;
+  cartButton.setAttribute('aria-label', `${product.name} 장바구니에 담기`);
+
   const buyLink = document.createElement('a');
   buyLink.className = 'signature-product-buy';
   buyLink.href = product.url;
@@ -110,7 +136,8 @@ const createSignatureProduct = (product) => {
   buyLink.textContent = '구매하기 →';
   buyLink.setAttribute('aria-label', `${product.name} 구매하기 (새 탭)`);
 
-  content.append(label, title, tagline, price, buyLink);
+  actions.append(cartButton, buyLink);
+  content.append(label, title, tagline, price, actions);
   article.append(imageLink, content);
   return article;
 };

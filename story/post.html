@@ -3,22 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="아브라함문의 울과 머플러에 관한 이야기는 각 글의 정적 페이지에서 읽을 수 있습니다.">
+  <meta name="author" content="박혜진 브랜드 비주얼팀">
+  <meta name="robots" content="noindex,follow">
   <meta name="theme-color" content="#F6F1E7">
+  <link rel="canonical" href="https://abrahammoon-muffler.vercel.app/story/">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="">
-  <meta property="og:description" content="">
-  <title>이야기 — 아브라함문</title>
+  <meta property="og:title" content="글 상세 안내 — 아브라함문">
+  <meta property="og:description" content="아브라함문의 울과 머플러에 관한 이야기는 각 글의 정적 페이지에서 읽을 수 있습니다.">
+  <meta property="og:url" content="https://abrahammoon-muffler.vercel.app/story/">
+  <title>글 상세 안내 — 아브라함문</title>
   <link rel="stylesheet" href="../styles.css">
   <script src="../script.js" defer></script>
+  <link rel="stylesheet" href="../assets/cart.css">
 </head>
 <body class="story-page">
   <a class="skip-link" href="#main">본문으로 건너뛰기</a>
   <header class="site-header is-scrolled" data-header>
     <a class="wordmark" href="../index.html" aria-label="아브라함문 홈">
-      <span class="wordmark-mark" aria-hidden="true">AM</span>
-      <span class="wordmark-name">아브라함문</span>
+      <img class="wordmark-logo" src="../assets/moon-logo.webp" alt="아브라함문" width="200" height="120">
     </a>
     <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>
       <span>메뉴</span><span class="menu-icon" aria-hidden="true"></span>
@@ -28,7 +31,7 @@
       <a href="../about.html">내 소개</a>
       <a href="../products.html">제품</a>
       <a href="./" aria-current="page">이야기</a>
-      <a href="../index.html#contact">연락하기</a>
+      <a href="../contact.html">연락하기</a>
     </nav>
   </header>
 
@@ -38,10 +41,13 @@
       <p class="story-empty">글을 불러오는 중입니다.</p>
     </div>
   </main>
-
   <footer class="site-footer">
-    <a class="wordmark" href="../index.html"><span class="wordmark-mark" aria-hidden="true">AM</span><span class="wordmark-name">아브라함문</span></a>
+    <a class="wordmark" href="../index.html"><img class="wordmark-logo" src="../assets/moon-logo.webp" alt="아브라함문" width="200" height="120"></a>
     <p>좋은 울, 오래 남는 온기.</p>
+    <div class="site-footer-contact">
+      <a href="mailto:supplyroute@supplyroute.co.kr" target="_blank" rel="noopener noreferrer">supplyroute@supplyroute.co.kr</a>
+      <a href="https://www.instagram.com/supplyroute" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
     <p>© <span data-year></span> ABRAHAMMOON</p>
   </footer>
 
@@ -157,5 +163,6 @@
       .catch(function (error) { notFound(); console.error(error); });
   }());
   </script>
+  <script src="../assets/cart.js" defer></script>
 </body>
 </html>

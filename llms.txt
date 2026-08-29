@@ -12,9 +12,13 @@
 - [내 소개](https://abrahammoon-muffler.vercel.app/about.html): 아브라함문의 역사와 제작 철학
 - [제품](https://abrahammoon-muffler.vercel.app/products.html): 현재 판매 중인 제품 컬렉션
 - [이야기](https://abrahammoon-muffler.vercel.app/story/): 울과 머플러에 관한 블로그
+- [연락하기](https://abrahammoon-muffler.vercel.app/contact.html): 이메일, Instagram, 스토어 링크 안내
 
 ## 이야기(블로그)
 
 - [아브라함문 머플러는 어떻게 만들어지나요?](https://abrahammoon-muffler.vercel.app/story/how-mufflers-are-made.html): 원모부터 마감까지 한 공장에서 이어지는 제작 과정
 - [25cm·50cm·70cm 머플러는 어떻게 다른가요?](https://abrahammoon-muffler.vercel.app/story/muffler-width-guide.html): 폭에 따른 부피감과 활용법 비교
 - [아브라함문 작가 콜라보 패키지는 연도별로 어떻게 달라졌나요?](https://abrahammoon-muffler.vercel.app/story/artist-package-collaboration.html): 2024 장줄리앙과 2025 고봄 패키지 상품 기록
+- [아브라함문은 어떻게 시작되었나요?](https://abrahammoon-muffler.vercel.app/story/how-abraham-moon-started.html): 1837년 기즐리에서 시작해 수직 통합 공장으로 이어진 역사
+- [아브라함문 작가 패키지는 무엇을 확인해야 하나요?](https://abrahammoon-muffler.vercel.app/story/artist-package-buying-guide.html): 작가 패키지의 연도와 제품 구성을 확인하는 기준
+- [왜 25cm인가요?](https://abrahammoon-muffler.vercel.app/story/why-25cm-muffler.html): 25cm 머플러를 50cm·70cm 제품과 비교하는 선택 기준
