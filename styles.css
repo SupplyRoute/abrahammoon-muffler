@@ -62,7 +62,7 @@ p { max-width: 40ch; }
   font-weight: 600;
   letter-spacing: -.045em;
 }
-.hero h1 { max-width: 11ch; font-size: clamp(4rem, 7.8vw, 8rem); line-height: 1.02; }
+.hero h1 { max-width: 11ch; font-size: clamp(4rem, 7.8vw, 8rem); line-height: 1.1; }
 .hero-intro { margin: 2.25rem 0 0; font-size: clamp(1rem, 1.25vw, 1.18rem); }
 .hero-foot { position: absolute; left: var(--pad); right: var(--pad); bottom: 2.1rem; display: flex; justify-content: space-between; align-items: end; gap: 2rem; font-size: .7rem; letter-spacing: .08em; }
 .hero-foot a { display: inline-flex; gap: 1.5rem; padding-bottom: .3rem; border-bottom: 1px solid currentColor; font-weight: 700; }
@@ -72,7 +72,7 @@ p { max-width: 40ch; }
 .about, .journal { max-width: var(--max); margin: 0 auto; }
 .section-label { color: var(--accent); }
 .section-intro { display: grid; grid-template-columns: minmax(10rem, .6fr) 1.4fr; gap: 4rem; align-items: start; }
-.section-intro h2, .journal-heading h2, .contact h2 { font-size: clamp(2.9rem, 5.4vw, 5.8rem); line-height: 1.08; }
+.section-intro h2, .journal-heading h2, .contact h2 { font-size: clamp(2.9rem, 5.4vw, 5.8rem); line-height: 1.16; }
 .about-body { width: min(850px, 100%); margin: clamp(5rem, 10vh, 8rem) 0 0 auto; }
 .lead { margin: 0; font-family: var(--heading-font); font-size: clamp(1.4rem, 2.3vw, 2.35rem); font-weight: 600; line-height: 1.5; letter-spacing: -.035em; }
 .about-columns { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 6vw, 6rem); margin-top: 4rem; }
@@ -84,7 +84,7 @@ p { max-width: 40ch; }
 
 .product { max-width: var(--max); min-height: 100svh; margin: 0 auto; padding: var(--section-space) var(--pad); display: grid; grid-template-columns: .68fr 1.32fr; gap: clamp(3rem, 8vw, 8rem); align-items: center; }
 .product-copy { order: 1; }
-.product-copy h2 { font-size: clamp(3rem, 5.2vw, 5.8rem); line-height: 1; white-space: nowrap; }
+.product-copy h2 { font-size: clamp(3rem, 5.2vw, 5.8rem); line-height: 1.1; white-space: nowrap; }
 .product-copy .lead { margin: 2.75rem 0 1.5rem; font-size: clamp(1.35rem, 2vw, 2.1rem); }
 .product-copy > p:not(.section-label):not(.lead) { margin: 0; }
 .product-specs { margin-top: 3rem; }
@@ -96,7 +96,7 @@ p { max-width: 40ch; }
 .belief { min-height: 100svh; display: grid; place-items: center; padding: var(--section-space) var(--pad); background: var(--ink); color: var(--cream); text-align: center; }
 .belief-inner { display: grid; justify-items: center; }
 .belief .section-label { color: var(--accent); }
-.belief h2 { font-size: clamp(3rem, 6vw, 6.5rem); line-height: 1.16; }
+.belief h2 { font-size: clamp(3rem, 6vw, 6.5rem); line-height: 1.23; }
 .belief-inner > p:last-child { margin: 2.4rem 0 0; color: var(--cream); font-size: clamp(1rem, 1.3vw, 1.2rem); }
 
 .journal-heading { display: grid; grid-template-columns: .45fr 1.2fr .55fr; gap: 3rem; align-items: end; }
@@ -150,7 +150,7 @@ p { max-width: 40ch; }
 .founder-hero-copy h1 {
   max-width: 10ch;
   margin: 0;
-  font: 600 clamp(3.6rem, 6.5vw, 7rem)/1.06 var(--heading-font);
+  font: 600 clamp(3.6rem, 6.5vw, 7rem)/1.14 var(--heading-font);
   letter-spacing: -.05em;
 }
 .founder-hero-copy > p:last-child { margin: 2.5rem 0 0; }
@@ -180,7 +180,7 @@ p { max-width: 40ch; }
 }
 .chapter-heading h2, .memory-copy h2, .timeline-heading h2 {
   margin: 0;
-  font: 600 clamp(2.8rem, 5.2vw, 5.6rem)/1.1 var(--heading-font);
+  font: 600 clamp(2.8rem, 5.2vw, 5.6rem)/1.18 var(--heading-font);
   letter-spacing: -.045em;
 }
 .story-copy { align-self: end; padding-top: 6rem; }
@@ -189,7 +189,7 @@ p { max-width: 40ch; }
 
 .making-section { max-width: var(--max); margin: 0 auto; padding: var(--section-space) var(--pad); }
 .making-heading { display: grid; grid-template-columns: .42fr 1.1fr .48fr; gap: clamp(2rem, 5vw, 5rem); align-items: end; }
-.making-heading h2 { margin: 0; font: 600 clamp(2.8rem, 5.2vw, 5.6rem)/1.1 var(--heading-font); letter-spacing: -.045em; }
+.making-heading h2 { margin: 0; font: 600 clamp(2.8rem, 5.2vw, 5.6rem)/1.18 var(--heading-font); letter-spacing: -.045em; }
 .making-heading > p:last-child { margin: 0 0 .7rem; }
 .making-steps { margin: clamp(5rem, 10vh, 8rem) 0 0; padding: 0; list-style: none; border-top: 1px solid rgba(28, 26, 23, .3); }
 .making-steps li { display: grid; grid-template-columns: .42fr 1.58fr; gap: clamp(2rem, 6vw, 7rem); padding: 2.5rem 0; border-bottom: 1px solid rgba(28, 26, 23, .3); }
@@ -208,7 +208,7 @@ p { max-width: 40ch; }
   color: var(--cream);
   text-align: center;
 }
-.story-quote blockquote { margin: 0; font: 600 clamp(2.4rem, 4.8vw, 5.2rem)/1.35 var(--heading-font); letter-spacing: -.045em; }
+.story-quote blockquote { margin: 0; font: 600 clamp(2.4rem, 4.8vw, 5.2rem)/1.42 var(--heading-font); letter-spacing: -.045em; }
 .story-quote p { margin: 0; color: var(--cream); }
 .principle-chapter { min-height: 100svh; align-items: center; }
 
@@ -227,7 +227,7 @@ p { max-width: 40ch; }
 .promise { min-height: 100svh; display: grid; place-items: center; padding: var(--section-space) var(--pad); background: var(--accent); color: var(--ink); text-align: center; }
 .promise-inner { display: grid; justify-items: center; }
 .promise .section-label { color: var(--ink); }
-.promise h2 { margin: 0; font: 600 clamp(2.8rem, 5.4vw, 5.8rem)/1.2 var(--heading-font); letter-spacing: -.045em; }
+.promise h2 { margin: 0; font: 600 clamp(2.8rem, 5.4vw, 5.8rem)/1.28 var(--heading-font); letter-spacing: -.045em; }
 .promise .text-link { margin-top: 3.5rem; }
 
 /* Product catalog */
@@ -244,7 +244,7 @@ p { max-width: 40ch; }
 }
 .catalog-hero h1 {
   margin: 0;
-  font: 600 clamp(3.6rem, 6.5vw, 7rem)/1.06 var(--heading-font);
+  font: 600 clamp(3.6rem, 6.5vw, 7rem)/1.14 var(--heading-font);
   letter-spacing: -.05em;
 }
 .catalog-intro { display: grid; gap: 2rem; }
@@ -253,7 +253,7 @@ p { max-width: 40ch; }
 .catalog-section, .featured-products { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad) var(--section-space); }
 .featured-products { padding-top: var(--section-space); }
 .featured-products-heading { display: flex; justify-content: space-between; align-items: end; gap: 3rem; margin-bottom: clamp(4rem, 8vh, 7rem); }
-.featured-products-heading h2 { margin: 0; font: 600 clamp(2.9rem, 5.4vw, 5.8rem)/1.08 var(--heading-font); letter-spacing: -.045em; }
+.featured-products-heading h2 { margin: 0; font: 600 clamp(2.9rem, 5.4vw, 5.8rem)/1.16 var(--heading-font); letter-spacing: -.045em; }
 .featured-products-heading .text-link { flex: 0 0 auto; }
 .catalog-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(2.5rem, 5vw, 5rem) clamp(1.25rem, 2.5vw, 2.5rem); }
 .catalog-card { min-width: 0; }
