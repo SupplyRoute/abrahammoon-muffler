@@ -186,6 +186,16 @@ p { max-width: 40ch; }
 .story-copy > p { margin: 0 0 1.7rem; }
 .story-lead { font-family: "Batang", "Nanum Myeongjo", "Noto Serif KR", Georgia, serif; font-size: clamp(1.55rem, 2.7vw, 2.7rem); line-height: 1.5; letter-spacing: -.04em; }
 
+.making-section { max-width: var(--max); margin: 0 auto; padding: var(--section-space) var(--pad); }
+.making-heading { display: grid; grid-template-columns: .42fr 1.1fr .48fr; gap: clamp(2rem, 5vw, 5rem); align-items: end; }
+.making-heading h2 { margin: 0; font: 400 clamp(3.2rem, 6.5vw, 7rem)/1.05 "Batang", "Nanum Myeongjo", "Noto Serif KR", Georgia, serif; letter-spacing: -.06em; }
+.making-heading > p:last-child { margin: 0 0 .7rem; }
+.making-steps { margin: clamp(5rem, 10vh, 8rem) 0 0; padding: 0; list-style: none; border-top: 1px solid rgba(28, 26, 23, .3); }
+.making-steps li { display: grid; grid-template-columns: .42fr 1.58fr; gap: clamp(2rem, 6vw, 7rem); padding: 2.5rem 0; border-bottom: 1px solid rgba(28, 26, 23, .3); }
+.making-steps li > span { color: var(--accent); font-size: .7rem; font-weight: 750; letter-spacing: .1em; }
+.making-steps h3 { margin: 0; font: 400 clamp(1.6rem, 2.8vw, 2.8rem)/1.25 "Batang", "Nanum Myeongjo", "Noto Serif KR", Georgia, serif; letter-spacing: -.04em; }
+.making-steps p { margin: .8rem 0 0; }
+
 .story-quote {
   min-height: 90svh;
   display: grid;
@@ -262,6 +272,8 @@ p { max-width: 40ch; }
   .story-quote { min-height: 100svh; }
   .story-quote blockquote br { display: none; }
   .memory-copy > p { margin-top: 2.5rem; }
+  .making-heading { grid-template-columns: 1fr; align-items: start; }
+  .making-heading > p:last-child { margin: 0; }
 }
 
 @media (max-width: 420px) {
@@ -283,6 +295,8 @@ p { max-width: 40ch; }
   .chapter-heading h2, .memory-copy h2, .timeline-heading h2 { font-size: clamp(3rem, 14vw, 4.2rem); }
   .story-quote blockquote { font-size: clamp(2.5rem, 12vw, 3.4rem); }
   .timeline li { grid-template-columns: 1fr; gap: .8rem; }
+  .making-heading h2 { font-size: clamp(3rem, 14vw, 4.2rem); }
+  .making-steps li { grid-template-columns: 2.5rem 1fr; gap: 1rem; }
   .promise h2 { font-size: clamp(2.8rem, 12.5vw, 3.8rem); }
 }
 
