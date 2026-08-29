@@ -21,6 +21,14 @@ nav.addEventListener('click', (event) => {
   }
 });
 
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && nav.classList.contains('is-open')) {
+    menuButton.setAttribute('aria-expanded', 'false');
+    nav.classList.remove('is-open');
+    menuButton.focus();
+  }
+});
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
