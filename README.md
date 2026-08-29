@@ -4,7 +4,7 @@
 
 ## 구성
 
-- 홈 / 내 소개(독립 페이지) / 제품 / 이야기 / 연락하기
+- 홈 / 내 소개 / 제품(독립 페이지) / 이야기 / 연락하기
 - 순수 HTML, CSS, JavaScript
 - 모바일 반응형 레이아웃
 - 키보드 탐색 및 모션 감소 설정 지원
@@ -12,7 +12,7 @@
 
 ## 로컬에서 보기
 
-`index.html`을 브라우저에서 열면 됩니다. 로컬 서버를 사용하려면 다음 명령을 실행하세요.
+제품 데이터는 `fetch()`로 불러오므로 로컬 서버에서 확인해야 합니다. 다음 명령을 실행하세요.
 
 ```bash
 python -m http.server 8000
@@ -24,8 +24,13 @@ python -m http.server 8000
 
 - 페이지 내용: `index.html`
 - 브랜드 소개 이야기: `about.html`
+- 제품 목록 페이지: `products.html`
+- 제품 데이터: `products.json`
 - 색상과 레이아웃: `styles.css`
 - 메뉴와 이메일 폼 동작: `script.js`
+- 제품 카드 렌더링: `products.js`
 - 제품 이미지: `assets/abrahammoon-merino-muffler.png`
 
 이메일 신청 폼과 이야기 링크는 현재 데모용입니다.
+
+새 제품은 `products.json`의 `products` 배열에 `name`, `price`, `image`, `url` 네 항목만 추가하면 홈과 제품 페이지에 함께 반영됩니다.
