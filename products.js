@@ -121,7 +121,7 @@ const renderProducts = (container, products) => {
   const featuredProducts = featuredPatterns
     .map((pattern) => products.find((product) => product.name.includes(pattern)))
     .filter(Boolean);
-  const signatureProduct = products.find((product) => product.name.includes('반녹번 실버'));
+  const signatureProduct = products.find((product) => product.name.includes('25cm 체크 컬렉션'));
   let sourceProducts = container.hasAttribute('data-featured') && featuredProducts.length
     ? featuredProducts
     : products;
@@ -144,7 +144,7 @@ const loadProducts = async () => {
     const data = await response.json();
     const products = Array.isArray(data.products) ? data.products : [];
 
-    const signatureProduct = products.find((product) => product.name.includes('반녹번 실버')) || products[0];
+    const signatureProduct = products.find((product) => product.name.includes('25cm 체크 컬렉션')) || products[0];
     productFeatures.forEach((container) => {
       if (signatureProduct) container.replaceChildren(createSignatureProduct(signatureProduct));
     });
