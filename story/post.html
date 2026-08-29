@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="theme-color" content="#F6F1E7">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <title>이야기 — 아브라함문</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../script.js" defer></script>
+</head>
+<body class="story-page">
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+  <header class="site-header is-scrolled" data-header>
+    <a class="wordmark" href="../index.html" aria-label="아브라함문 홈">
+      <span class="wordmark-mark" aria-hidden="true">AM</span>
+      <span class="wordmark-name">아브라함문</span>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>
+      <span>메뉴</span><span class="menu-icon" aria-hidden="true"></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="주요 메뉴" data-nav>
+      <a href="../index.html#home">홈</a>
+      <a href="../about.html">내 소개</a>
+      <a href="../products.html">제품</a>
+      <a href="./" aria-current="page">이야기</a>
+      <a href="../index.html#contact">연락하기</a>
+    </nav>
+  </header>
+
+  <main id="main" class="story-shell">
+    <a class="post-back" href="./">← 이야기 목록</a>
+    <div data-post-main>
+      <p class="story-empty">글을 불러오는 중입니다.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark" href="../index.html"><span class="wordmark-mark" aria-hidden="true">AM</span><span class="wordmark-name">아브라함문</span></a>
+    <p>좋은 울, 오래 남는 온기.</p>
+    <p>© <span data-year></span> ABRAHAMMOON</p>
+  </footer>
+
+  <script>
+  (function () {
+    var main = document.querySelector('[data-post-main]');
+    function element(tag, className, text) {
+      var node = document.createElement(tag);
+      if (className) node.className = className;
+      if (text != null) node.textContent = text;
+      return node;
+    }
+    function formatDate(value) {
+      var date = new Date(String(value || '') + 'T00:00:00');
+      if (isNaN(date.getTime())) return value || '';
+      return new Intl.DateTimeFormat('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }).format(date);
+    }
+    function hrefOf(post) {
+      return post.url ? String(post.url) : 'post.html?id=' + encodeURIComponent(post.id || '');
+    }
+    function renderBody(source) {
+      var body = element('div', 'post-body');
+      String(source || '').replace(/\r\n/g, '\n').split(/\n\s*\n/).forEach(function (block) {
+        block = block.trim();
+        if (!block) return;
+        var lines = block.split('\n');
+        if (lines.every(function (line) { return /^- /.test(line.trim()); })) {
+          var list = element('ul');
+          lines.forEach(function (line) { list.append(element('li', null, line.trim().slice(2))); });
+          body.append(list);
+        } else if (/^## /.test(block)) {
+          body.append(element('h2', null, block.slice(3).trim()));
+        } else {
+          body.append(element('p', null, block));
+        }
+      });
+      return body;
+    }
+    function setMeta(post) {
+      var title = String(post.title || '이야기');
+      var description = String(post.description || post.summary || '').slice(0, 160);
+      document.title = title + ' — 아브라함문';
+      document.querySelector('meta[name="description"]').content = description;
+      document.querySelector('meta[name="author"]').content = String(post.author || '');
+      document.querySelector('meta[property="og:title"]').content = title;
+      document.querySelector('meta[property="og:description"]').content = description;
+      var ld = document.createElement('script');
+      ld.type = 'application/ld+json';
+      ld.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline: title,
+        description: description,
+        datePublished: String(post.date || ''),
+        dateModified: String(post.updated || post.date || ''),
+        author: { '@type': 'Organization', name: String(post.author || '아브라함문') }
+      });
+      document.head.append(ld);
+    }
+    function renderFaq(faq) {
+      var section = element('section', 'post-faq');
+      section.append(element('h2', null, '자주 묻는 질문'));
+      faq.forEach(function (item) {
+        var details = element('details');
+        details.append(element('summary', null, item.q), element('p', null, item.a));
+        section.append(details);
+      });
+      return section;
+    }
+    function renderPost(post, posts) {
+      setMeta(post);
+      var article = element('article');
+      var head = element('header', 'post-head');
+      var time = element('time', null, formatDate(post.date));
+      time.dateTime = post.date || '';
+      var title = element('h1', null, post.title || '(제목 없음)');
+      head.append(time, title);
+      if (post.author) head.append(element('p', 'post-meta', post.author));
+      article.append(head, element('hr', 'post-rule'), renderBody(post.body));
+      if (Array.isArray(post.faq) && post.faq.length) article.append(renderFaq(post.faq));
+
+      var sorted = posts.slice().sort(function (a, b) { return String(b.date || '').localeCompare(String(a.date || '')); });
+      var index = sorted.findIndex(function (item) { return item.id === post.id; });
+      var nav = element('nav', 'post-nav');
+      nav.setAttribute('aria-label', '다른 이야기');
+      [[sorted[index - 1], '이전 글'], [sorted[index + 1], '다음 글']].forEach(function (entry) {
+        var link = element('a');
+        if (entry[0]) {
+          link.href = hrefOf(entry[0]);
+          link.append(element('small', null, entry[1]), element('span', null, entry[0].title));
+        }
+        nav.append(link);
+      });
+      article.append(nav);
+      main.replaceChildren(article);
+    }
+    function notFound() {
+      var box = element('div', 'post-not-found');
+      box.append(element('h1', null, '글을 찾을 수 없습니다'), element('p', null, '주소가 잘못되었거나 삭제된 글일 수 있습니다.'));
+      var link = element('a', 'text-link', '이야기 목록으로 →');
+      link.href = './';
+      box.append(link);
+      main.replaceChildren(box);
+    }
+    var id = new URLSearchParams(location.search).get('id');
+    fetch('posts.json', { cache: 'no-store' })
+      .then(function (response) { if (!response.ok) throw new Error(response.status); return response.json(); })
+      .then(function (posts) {
+        var list = Array.isArray(posts) ? posts : [];
+        var post = list.find(function (item) { return String(item.id || '') === String(id || ''); });
+        if (post) renderPost(post, list); else notFound();
+      })
+      .catch(function (error) { notFound(); console.error(error); });
+  }());
+  </script>
+</body>
+</html>

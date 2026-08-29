@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="아브라함문의 제품과 만드는 사람들의 이야기를 기록합니다.">
+  <meta name="theme-color" content="#F6F1E7">
+  <title>이야기 — 아브라함문</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../script.js" defer></script>
+</head>
+<body class="story-page">
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+  <header class="site-header is-scrolled" data-header>
+    <a class="wordmark" href="../index.html" aria-label="아브라함문 홈">
+      <span class="wordmark-mark" aria-hidden="true">AM</span>
+      <span class="wordmark-name">아브라함문</span>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>
+      <span>메뉴</span><span class="menu-icon" aria-hidden="true"></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="주요 메뉴" data-nav>
+      <a href="../index.html#home">홈</a>
+      <a href="../about.html">내 소개</a>
+      <a href="../products.html">제품</a>
+      <a href="./" aria-current="page">이야기</a>
+      <a href="../index.html#contact">연락하기</a>
+    </nav>
+  </header>
+
+  <main id="main" class="story-shell">
+    <section class="story-list-hero reveal">
+      <p class="section-label">Story · Journal</p>
+      <h1>울과 시간에 관한 기록</h1>
+      <p>제품 뒤에 있는 사람과 과정, 오래 쓰는 마음을 천천히 쌓아갑니다.</p>
+    </section>
+    <ul class="story-list" data-blog-list>
+      <li class="story-empty">이야기를 불러오는 중입니다.</li>
+    </ul>
+    <a class="story-admin-link" href="admin.html">관리</a>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark" href="../index.html"><span class="wordmark-mark" aria-hidden="true">AM</span><span class="wordmark-name">아브라함문</span></a>
+    <p>좋은 울, 오래 남는 온기.</p>
+    <p>© <span data-year></span> ABRAHAMMOON</p>
+  </footer>
+
+  <script>
+  (function () {
+    var list = document.querySelector('[data-blog-list]');
+    function formatDate(value) {
+      var date = new Date(String(value || '') + 'T00:00:00');
+      if (isNaN(date.getTime())) return value || '';
+      return new Intl.DateTimeFormat('ko-KR', { year: 'numeric', month: '2-digit', day: '2-digit' }).format(date);
+    }
+    function hrefOf(post) {
+      return post.url ? String(post.url) : 'post.html?id=' + encodeURIComponent(post.id || '');
+    }
+    function render(posts) {
+      if (!Array.isArray(posts) || !posts.length) {
+        var empty = document.createElement('li');
+        empty.className = 'story-empty';
+        empty.textContent = '첫 번째 이야기를 준비하고 있습니다.';
+        list.replaceChildren(empty);
+        return;
+      }
+      var items = posts.slice().sort(function (a, b) {
+        return String(b.date || '').localeCompare(String(a.date || ''));
+      }).map(function (post) {
+        var item = document.createElement('li');
+        item.className = 'story-card reveal is-visible';
+        var link = document.createElement('a');
+        link.href = hrefOf(post);
+        var time = document.createElement('time');
+        time.dateTime = post.date || '';
+        time.textContent = formatDate(post.date);
+        var title = document.createElement('h2');
+        title.textContent = post.title || '(제목 없음)';
+        link.append(time, title);
+        if (post.summary) {
+          var summary = document.createElement('p');
+          summary.className = 'story-card-summary';
+          summary.textContent = post.summary;
+          link.append(summary);
+        }
+        if (Array.isArray(post.tags) && post.tags.length) {
+          var tags = document.createElement('div');
+          tags.className = 'story-tags';
+          post.tags.forEach(function (value) {
+            var tag = document.createElement('span');
+            tag.className = 'story-tag';
+            tag.textContent = value;
+            tags.append(tag);
+          });
+          link.append(tags);
+        }
+        item.append(link);
+        return item;
+      });
+      list.replaceChildren.apply(list, items);
+    }
+    fetch('posts.json', { cache: 'no-store' })
+      .then(function (response) { if (!response.ok) throw new Error(response.status); return response.json(); })
+      .then(render)
+      .catch(function (error) {
+        var message = document.createElement('li');
+        message.className = 'story-empty';
+        message.textContent = '이야기를 불러오지 못했습니다. 잠시 후 다시 확인해주세요.';
+        list.replaceChildren(message);
+        console.error(error);
+      });
+  }());
+  </script>
+</body>
+</html>
