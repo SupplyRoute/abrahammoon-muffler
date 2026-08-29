@@ -4,7 +4,7 @@
 
 ## 구성
 
-- 홈 / 내 소개 / 제품 / 이야기 / 연락하기
+- 홈 / 내 소개(독립 페이지) / 제품 / 이야기 / 연락하기
 - 순수 HTML, CSS, JavaScript
 - 모바일 반응형 레이아웃
 - 키보드 탐색 및 모션 감소 설정 지원
@@ -23,6 +23,7 @@ python -m http.server 8000
 ## 수정하기
 
 - 페이지 내용: `index.html`
+- 브랜드 소개 이야기: `about.html`
 - 색상과 레이아웃: `styles.css`
 - 메뉴와 이메일 폼 동작: `script.js`
 - 제품 이미지: `assets/abrahammoon-merino-muffler.png`

@@ -50,11 +50,13 @@ if (reduceMotion || !('IntersectionObserver' in window)) {
   revealElements.forEach((element) => observer.observe(element));
 }
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const email = new FormData(form).get('email');
-  formMessage.textContent = `${email} 주소로 출시 소식을 보내드릴게요. (현재는 데모입니다)`;
-  form.reset();
-});
+if (form) {
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const email = new FormData(form).get('email');
+    formMessage.textContent = `${email} 주소로 출시 소식을 보내드릴게요. (현재는 데모입니다)`;
+    form.reset();
+  });
+}
 
 document.querySelector('[data-year]').textContent = new Date().getFullYear();
