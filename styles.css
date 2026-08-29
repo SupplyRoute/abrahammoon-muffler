@@ -325,6 +325,15 @@ p { max-width: 40ch; }
 .post-faq summary { cursor: pointer; font-weight: 650; }
 .post-faq summary::marker { color: var(--accent); }
 .post-faq p { max-width: none; margin: .8rem 0 0; color: rgba(28, 26, 23, .72); }
+.post-related { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(28, 26, 23, .25); }
+.post-related h2, .post-sources h2 { margin: 0 0 1rem; font: 600 1rem/1.5 var(--heading-font); }
+.post-related ul, .post-sources ol { margin: 0; padding-left: 1.2rem; }
+.post-related li, .post-sources li { margin-bottom: .55rem; }
+.post-related a, .post-sources a { border-bottom: 1px solid currentColor; }
+.post-sources { margin-top: 2.5rem; color: rgba(28, 26, 23, .68); font-size: .78rem; }
+.post-cta { margin-top: 3rem; padding: 2rem; background: var(--ink); color: var(--cream); }
+.post-cta p { margin: 0; color: var(--cream); }
+.post-cta .text-link { margin-top: 1.2rem; }
 .post-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: clamp(4rem, 10vh, 7rem); padding-top: 1.5rem; border-top: 1px solid rgba(28, 26, 23, .3); }
 .post-nav a:last-child { text-align: right; }
 .post-nav small { display: block; color: var(--accent); font-size: .62rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }

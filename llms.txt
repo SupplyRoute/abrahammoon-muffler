@@ -1,0 +1,20 @@
+# 아브라함문
+
+1837년부터 영국 요크셔 기즐리에서 울 원단을 만들어 온 아브라함문의 한국어 브랜드 사이트입니다.
+
+## 파는 것
+
+메리노울 25cm 머플러, 50cm 숄 머플러, 70cm 숄과 울 제품을 소개합니다.
+
+## 주요 페이지
+
+- [홈](https://abrahammoon-muffler.vercel.app/): 브랜드 소개와 대표 제품, 최신 이야기
+- [내 소개](https://abrahammoon-muffler.vercel.app/about.html): 아브라함문의 역사와 제작 철학
+- [제품](https://abrahammoon-muffler.vercel.app/products.html): 현재 판매 중인 제품 컬렉션
+- [이야기](https://abrahammoon-muffler.vercel.app/story/): 울과 머플러에 관한 블로그
+
+## 이야기(블로그)
+
+- [아브라함문 머플러는 어떻게 만들어지나요?](https://abrahammoon-muffler.vercel.app/story/how-mufflers-are-made.html): 원모부터 마감까지 한 공장에서 이어지는 제작 과정
+- [25cm·50cm·70cm 머플러는 어떻게 다른가요?](https://abrahammoon-muffler.vercel.app/story/muffler-width-guide.html): 폭에 따른 부피감과 활용법 비교
+- [아브라함문 작가 콜라보 패키지는 연도별로 어떻게 달라졌나요?](https://abrahammoon-muffler.vercel.app/story/artist-package-collaboration.html): 2024 장줄리앙과 2025 고봄 패키지 상품 기록
