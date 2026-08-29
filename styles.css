@@ -258,7 +258,7 @@ p { max-width: 40ch; }
 .catalog-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(2.5rem, 5vw, 5rem) clamp(1.25rem, 2.5vw, 2.5rem); }
 .catalog-card { min-width: 0; }
 .catalog-card-image { display: block; overflow: hidden; background: var(--ink); }
-.catalog-card-image img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; transition: transform .5s ease; }
+.catalog-card-image img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; transition: transform .5s ease; }
 .catalog-card-image:hover img, .catalog-card-image:focus-visible img { transform: scale(1.025); }
 .catalog-card-content { padding-top: 1.25rem; }
 .catalog-card h3 { min-height: 3.2em; margin: 0; font: 600 clamp(1rem, 1.25vw, 1.2rem)/1.55 var(--heading-font); letter-spacing: -.025em; }
